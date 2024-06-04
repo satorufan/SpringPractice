@@ -15,12 +15,14 @@
 		</tr>
 	<c:forEach var="member" items="${memberList }">
 		<tr>
-			<td>${member.id }</td>
+			<td><a href="detail.do?id=${member.id}">${member.id }</a></td>
 			<td>${member.password }</td>
 			<td>${member.name }</td>
 			<td>${member.role }</td>
 		</tr>
 	</c:forEach>
 	</table>
+	
+	<a href="input.do">회원정보입력</a>
 </body>
 </html>

@@ -40,12 +40,27 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	@Override
 	public void update (MemberDTO dto) {
-		int idx = memberList.indexOf(dto);
+		int idx = -1;
+		for (int i=0 ; i<memberList.size() ; i++) {
+			System.out.println("리스트 : " + memberList.get(i).getId());
+			System.out.println(dto);
+			if (memberList.get(i).getId().equals(dto.getId())) {
+				idx = i;
+				break;
+			}
+		}
+		if (idx != -1) {
+			memberList.get(idx).setId(dto.getId());
+			memberList.get(idx).setName(dto.getName());
+			memberList.get(idx).setPassword(dto.getPassword());
+			memberList.get(idx).setRole(dto.getRole());
+		}
 	}
 	
 	@Override
 	public void delete (MemberDTO dto) {
 		int idx = memberList.indexOf(dto);
+		memberList.remove(idx);
 	}
 
 }

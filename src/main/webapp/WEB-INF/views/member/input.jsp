@@ -22,6 +22,6 @@
 		</table>
 		<button type="submit">추가</button>
 	</form>
-	<a href="list.do">목록으로</a>
+	<a href="list.do">취소</a>
 </body>
 </html>
